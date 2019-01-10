@@ -1,4 +1,4 @@
-package com.inversepalindrome.studybits;
+package com.inversepalindrome.sensorbox;
 
 import org.junit.Test;
 

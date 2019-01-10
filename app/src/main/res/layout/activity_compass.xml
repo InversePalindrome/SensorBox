@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CompassActivity">
 
-</android.support.design.widget.CoordinatorLayout>
+    <ImageView
+        android:id="@+id/compassImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/compass_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/compass_image" />
+
+    <TextView
+        android:id="@+id/degreeText"
+        android:layout_width="23dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="41dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/compassImage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/compassImage"
+        app:layout_constraintTop_toTopOf="@+id/compassImage"
+        tools:textSize="30sp" />
+
+</android.support.constraint.ConstraintLayout>

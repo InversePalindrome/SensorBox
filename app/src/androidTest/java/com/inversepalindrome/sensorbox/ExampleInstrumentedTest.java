@@ -1,4 +1,4 @@
-package com.inversepalindrome.studybits;
+package com.inversepalindrome.sensorbox;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

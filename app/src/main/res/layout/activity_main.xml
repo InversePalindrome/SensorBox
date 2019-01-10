@@ -4,13 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.inversepalindrome.studybits.MainActivity">
+    tools:context="com.inversepalindrome.sensorbox.MainActivity">
 
     <Button
-        android:id="@+id/CompassButton"
+        android:id="@+id/compassButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="90dp"
         android:text="Compass"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="138dp" />
+        app:layout_constraintEnd_toStartOf="@+id/accelerometerButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/accelerometerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:text="Accelerometer"
+        app:layout_constraintBaseline_toBaselineOf="@+id/compassButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/compassButton" />
 </android.support.constraint.ConstraintLayout>

@@ -1,11 +1,11 @@
 /*
-* Copyright (c) 2018 Inverse Palindrome
-* StudyBits - MainActivity.java
+* Copyright (c) 2019 Inverse Palindrome
+* SensorBox - MainActivity.java
 * https://inversepalindrome.com/
 */
 
 
-package com.inversepalindrome.studybits;
+package com.inversepalindrome.sensorbox;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,13 +23,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button button = findViewById(R.id.CompassButton);
-        button.setOnClickListener(new View.OnClickListener(){
+        final Button compassButton = findViewById(R.id.compassButton);
+        compassButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
             {
                 Intent compassIntent = new Intent(MainActivity.this, CompassActivity.class);
                 startActivity(compassIntent);
+            }
+        });
+
+        final Button accelerometerButton = findViewById(R.id.accelerometerButton);
+        accelerometerButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Intent accelerometerIntent = new Intent(MainActivity.this, AccelerometerActivity.class);
+                startActivity(accelerometerIntent);
             }
         });
     }

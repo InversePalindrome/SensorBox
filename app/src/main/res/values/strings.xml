@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">StudyBits</string>
+    <string name="app_name">SensorBox</string>
     <string name="title_activity_compass">CompassActivity</string>
 </resources>
