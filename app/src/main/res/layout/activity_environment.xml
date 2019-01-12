@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.inversepalindrome.sensorbox.EnvironmentActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/temperatureLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:text="Ambient Temperature (C°):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/temperatureValueText"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/temperatureValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="9dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/ambientHumidityValueText"
+        app:layout_constraintStart_toEndOf="@+id/temperatureLabelText" />
+
+    <TextView
+        android:id="@+id/lightLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Light (lx):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lightValueText"
+        app:layout_constraintStart_toStartOf="@+id/ambientHumidityLabelText" />
+
+    <TextView
+        android:id="@+id/lightValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/lightLabelText"
+        app:layout_constraintTop_toBottomOf="@+id/ambientPressureLabelText" />
+
+    <TextView
+        android:id="@+id/ambientPressureLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="158dp"
+        android:text="Ambient Pressure (hPa):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/lightValueText"
+        app:layout_constraintStart_toEndOf="@+id/lightValueText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ambientPressureValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ambientPressureLabelText"
+        app:layout_constraintStart_toEndOf="@+id/ambientPressureLabelText" />
+
+    <TextView
+        android:id="@+id/ambientHumidityLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ambient Humidity (%):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ambientHumidityValueText"
+        app:layout_constraintStart_toStartOf="@+id/temperatureLabelText" />
+
+    <TextView
+        android:id="@+id/ambientHumidityValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="7dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/ambientPressureLabelText"
+        app:layout_constraintStart_toEndOf="@+id/ambientHumidityLabelText" />
+
+</android.support.constraint.ConstraintLayout>

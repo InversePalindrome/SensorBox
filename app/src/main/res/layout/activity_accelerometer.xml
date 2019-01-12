@@ -6,4 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".AccelerometerActivity">
 
+    <TextView
+        android:id="@+id/xAccelerationLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="X Acceleration (m/s^2):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/xAccelerationValueText"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/yAccelerationLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:text="Y Acceleration (m/s^2):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/xAccelerationLabelText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/zAccelerationLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Z Acceleration (m/s^2):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/yAccelerationLabelText"
+        app:layout_constraintTop_toBottomOf="@+id/yAccelerationLabelText" />
+
+    <TextView
+        android:id="@+id/xAccelerationValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/yAccelerationValueText"
+        app:layout_constraintStart_toEndOf="@+id/xAccelerationLabelText"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/yAccelerationValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/yAccelerationLabelText"
+        app:layout_constraintStart_toEndOf="@+id/yAccelerationLabelText"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/zAccelerationValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/zAccelerationLabelText"
+        app:layout_constraintStart_toEndOf="@+id/zAccelerationLabelText"
+        tools:text="0" />
 </android.support.constraint.ConstraintLayout>

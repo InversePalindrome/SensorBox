@@ -9,15 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher">
-        <activity android:name="com.inversepalindrome.sensorbox.MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:icon="@mipmap/ic_launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.inversepalindrome.sensorbox.CompassActivity" android:label="Compass" />
-        <activity android:name="com.inversepalindrome.sensorbox.AccelerometerActivity" android:label="Accelerometer"></activity>
+        <activity
+            android:name=".CompassActivity"
+            android:label="Compass"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".AccelerometerActivity"
+            android:label="Accelerometer" />
+        <activity android:name=".EnvironmentActivity" android:label="Environment"/>
+        <activity android:name=".GyroscopeActivity" android:label="Gyroscope"></activity>
     </application>
 
 </manifest>

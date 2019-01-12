@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2019 Inverse Palindrome
- * SensorBox - CompassActivity.java
- * https://inversepalindrome.com/
- */
+Copyright (c) 2019 Inverse Palindrome
+SensorBox - CompassActivity.java
+https://inversepalindrome.com/
+*/
 
 
 package com.inversepalindrome.sensorbox;
@@ -18,14 +18,16 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.hardware.SensorEventListener;
 import android.os.Bundle;
-
+import android.widget.Toast;
 import java.util.Locale;
 
 
 public class CompassActivity extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
+
     private ImageView compassImage;
     private TextView degreeText;
+
     private float currentDegree = 0.f;
 
     @Override
@@ -34,9 +36,10 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compass);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+
         compassImage = findViewById(R.id.compassImage);
         degreeText = findViewById(R.id.degreeText);
     }
@@ -45,8 +48,14 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
     protected void onResume(){
         super.onResume();
 
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
-                sensorManager.SENSOR_DELAY_GAME);
+        Sensor orientationSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+
+        if(orientationSensor != null) {
+            sensorManager.registerListener(this, orientationSensor, sensorManager.SENSOR_DELAY_GAME);
+        }
+        else {
+            Toast.makeText(this, "No orientation sensor found!", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -60,7 +69,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
     public void onSensorChanged(SensorEvent event){
         float degree = Math.round(event.values[0]);
 
-        degreeText.setText(String.format(Locale.US, "%.1f", degree));
+        degreeText.setText(String.format(Locale.US, "%.1f", degree) + "°");
 
         RotateAnimation rotateAnimation = new RotateAnimation(currentDegree, -degree, Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f);
@@ -72,9 +81,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
 
         currentDegree = -degree;
     }
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy)
-    {
 
-    }
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) { }
 }

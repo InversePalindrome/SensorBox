@@ -1,7 +1,7 @@
 /*
-* Copyright (c) 2019 Inverse Palindrome
-* SensorBox - MainActivity.java
-* https://inversepalindrome.com/
+Copyright (c) 2019 Inverse Palindrome
+SensorBox - MainActivity.java
+https://inversepalindrome.com/
 */
 
 
@@ -15,13 +15,22 @@ import android.content.Intent;
 
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Button accelerometerButton = findViewById(R.id.accelerometerButton);
+        accelerometerButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Intent accelerometerIntent = new Intent(MainActivity.this, AccelerometerActivity.class);
+                startActivity(accelerometerIntent);
+            }
+        });
 
         final Button compassButton = findViewById(R.id.compassButton);
         compassButton.setOnClickListener(new View.OnClickListener(){
@@ -33,13 +42,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button accelerometerButton = findViewById(R.id.accelerometerButton);
-        accelerometerButton.setOnClickListener(new View.OnClickListener(){
+        final Button gyroscopeButton = findViewById(R.id.gyroscopeButton);
+        gyroscopeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
             {
-                Intent accelerometerIntent = new Intent(MainActivity.this, AccelerometerActivity.class);
-                startActivity(accelerometerIntent);
+                Intent gyroscopeIntent = new Intent(MainActivity.this, GyroscopeActivity.class);
+                startActivity(gyroscopeIntent);
+            }
+        });
+
+        final Button environmentButton = findViewById(R.id.environmentButton);
+        environmentButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Intent environmentIntent = new Intent(MainActivity.this, EnvironmentActivity.class);
+                startActivity(environmentIntent);
             }
         });
     }

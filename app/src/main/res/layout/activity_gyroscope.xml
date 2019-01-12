@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.inversepalindrome.sensorbox.GyroscopeActivity">
+
+    <TextView
+        android:id="@+id/angularSpeedXLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="Angular Speed X (rad/s):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/angularSpeedXValueText"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/angularSpeedYLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Angular Speed Y (rad/s):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/angularSpeedYValueText"
+        app:layout_constraintStart_toStartOf="@+id/angularSpeedXLabelText" />
+
+    <TextView
+        android:id="@+id/angularSpeedZLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:text="Angular Speed Z (rad/s):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/angularSpeedZValueText"
+        app:layout_constraintEnd_toEndOf="@+id/angularSpeedYLabelText" />
+
+    <TextView
+        android:id="@+id/angularSpeedXValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="58dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/angularSpeedXLabelText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/angularSpeedYValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/angularSpeedXValueText"
+        app:layout_constraintTop_toBottomOf="@+id/angularSpeedXValueText" />
+
+    <TextView
+        android:id="@+id/angularSpeedZValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="17dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/angularSpeedZLabelText"
+        app:layout_constraintTop_toBottomOf="@+id/angularSpeedYValueText" />
+</android.support.constraint.ConstraintLayout>
