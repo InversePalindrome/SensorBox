@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.inversepalindrome.sensorbox">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,12 +24,18 @@
         <activity
             android:name=".CompassActivity"
             android:label="Compass"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AccelerometerActivity"
             android:label="Accelerometer" />
-        <activity android:name=".EnvironmentActivity" android:label="Environment"/>
-        <activity android:name=".GyroscopeActivity" android:label="Gyroscope"></activity>
+        <activity
+            android:name=".EnvironmentActivity"
+            android:label="Environment" />
+        <activity
+            android:name=".GyroscopeActivity"
+            android:label="Gyroscope" />
+        <activity android:name=".MagnetActivity" android:label="Magnet" />
+        <activity android:name=".SoundActivity" android:label="Sound"></activity>
     </application>
 
 </manifest>

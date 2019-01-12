@@ -7,7 +7,6 @@ https://inversepalindrome.com/
 
 package com.inversepalindrome.sensorbox;
 
-import android.widget.TextView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.hardware.Sensor;
@@ -15,6 +14,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.widget.Toast;
+import android.widget.TextView;
+
 import java.util.Locale;
 
 
@@ -45,7 +46,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
     protected void onResume() {
         super.onResume();
 
-        Sensor temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
+        final Sensor temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
 
         if(temperatureSensor != null){
             sensorManager.registerListener(this, temperatureSensor, SensorManager.SENSOR_DELAY_FASTEST);
@@ -54,7 +55,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
             Toast.makeText(this, "No temperature sensor found!", Toast.LENGTH_LONG).show();
         }
 
-        Sensor humiditySensor = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY);
+        final Sensor humiditySensor = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY);
 
         if(humiditySensor != null){
             sensorManager.registerListener(this, humiditySensor, SensorManager.SENSOR_DELAY_FASTEST);
@@ -63,7 +64,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
             Toast.makeText(this, "No humidity sensor found!", Toast.LENGTH_LONG).show();
         }
 
-        Sensor pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
+        final Sensor pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
 
         if(pressureSensor != null){
             sensorManager.registerListener(this, pressureSensor, SensorManager.SENSOR_DELAY_FASTEST);
@@ -72,7 +73,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
             Toast.makeText(this, "No pressure sensor found!", Toast.LENGTH_LONG).show();
         }
 
-        Sensor lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        final Sensor lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
         if(lightSensor != null){
             sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_FASTEST);
@@ -92,22 +93,22 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
     @Override
     public void onSensorChanged(SensorEvent sensorEvent){
        if(sensorEvent.sensor.getType() == Sensor.TYPE_AMBIENT_TEMPERATURE){
-           float ambientTemperature = sensorEvent.values[0];
+           final float ambientTemperature = sensorEvent.values[0];
 
            temperatureText.setText(String.format(Locale.US, "%.1f", ambientTemperature));
        }
        else if(sensorEvent.sensor.getType() == Sensor.TYPE_RELATIVE_HUMIDITY){
-           float ambientHumidity = sensorEvent.values[0];
+           final float ambientHumidity = sensorEvent.values[0];
 
            humidityText.setText(String.format(Locale.US, "%.1f", ambientHumidity));
        }
        else if(sensorEvent.sensor.getType() == Sensor.TYPE_PRESSURE){
-           float ambientPressure = sensorEvent.values[0];
+           final float ambientPressure = sensorEvent.values[0];
 
            pressureText.setText(String.format(Locale.US, "%.1f", ambientPressure));
        }
        else if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT){
-           float ambientLight = sensorEvent.values[0];
+           final float ambientLight = sensorEvent.values[0];
 
            lightText.setText(String.format(Locale.US, "%.1f", ambientLight));
        }

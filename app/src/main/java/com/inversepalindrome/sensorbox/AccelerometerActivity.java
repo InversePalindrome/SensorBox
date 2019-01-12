@@ -14,8 +14,9 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import java.util.Locale;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 
 public class AccelerometerActivity extends AppCompatActivity implements SensorEventListener {
@@ -43,7 +44,7 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
     protected void onResume(){
         super.onResume();
 
-        Sensor accelerationSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        final Sensor accelerationSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         if(accelerationSensor != null) {
             sensorManager.registerListener(this, accelerationSensor, SensorManager.SENSOR_DELAY_NORMAL);
@@ -62,15 +63,13 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
 
     @Override
     public void onSensorChanged(SensorEvent event){
-       if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
-          float xAcceleration = event.values[0];
-          float yAcceleration = event.values[1];
-          float zAcceleration = event.values[2];
+        final float xAcceleration = event.values[0];
+        final float yAcceleration = event.values[1];
+        final float zAcceleration = event.values[2];
 
-          xAccelerationText.setText(String.format(Locale.US, "%.1f", xAcceleration));
-          yAccelerationText.setText(String.format(Locale.US, "%.1f", yAcceleration));
-          zAccelerationText.setText(String.format(Locale.US, "%.1f", zAcceleration));
-       }
+        xAccelerationText.setText(String.format(Locale.US, "%.1f", xAcceleration));
+        yAccelerationText.setText(String.format(Locale.US, "%.1f", yAcceleration));
+        zAccelerationText.setText(String.format(Locale.US, "%.1f", zAcceleration));
     }
 
     @Override

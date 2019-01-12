@@ -19,6 +19,7 @@ import android.hardware.SensorManager;
 import android.hardware.SensorEventListener;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import java.util.Locale;
 
 
@@ -48,7 +49,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
     protected void onResume(){
         super.onResume();
 
-        Sensor orientationSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+        final Sensor orientationSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 
         if(orientationSensor != null) {
             sensorManager.registerListener(this, orientationSensor, sensorManager.SENSOR_DELAY_GAME);
@@ -67,7 +68,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
 
     @Override
     public void onSensorChanged(SensorEvent event){
-        float degree = Math.round(event.values[0]);
+        final float degree = Math.round(event.values[0]);
 
         degreeText.setText(String.format(Locale.US, "%.1f", degree) + "°");
 

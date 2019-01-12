@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.Locale;
 
 
@@ -62,9 +63,9 @@ public class GyroscopeActivity extends AppCompatActivity implements SensorEventL
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent){
-        float angularSpeedX = sensorEvent.values[0];
-        float angularSpeedY = sensorEvent.values[1];
-        float angularSpeedZ = sensorEvent.values[2];
+        final float angularSpeedX = sensorEvent.values[0];
+        final float angularSpeedY = sensorEvent.values[1];
+        final float angularSpeedZ = sensorEvent.values[2];
 
         xAngularSpeedText.setText(String.format(Locale.US, "%.1f", angularSpeedX));
         yAngularSpeedText.setText(String.format(Locale.US, "%.1f", angularSpeedY));

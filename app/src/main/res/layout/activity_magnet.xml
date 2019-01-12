@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.inversepalindrome.sensorbox.MagnetActivity">
+
+    <TextView
+        android:id="@+id/xGeomagneticFieldLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="69dp"
+        android:text="Geomagnetic Field X (μT):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/xGeomagneticFieldValueText"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/yGeomagneticFieldLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geomagnetic Field Y (μT):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/yGeomagneticFieldValueText"
+        app:layout_constraintStart_toStartOf="@+id/xGeomagneticFieldLabelText" />
+
+    <TextView
+        android:id="@+id/zGeomagneticFieldLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geomagnetic Field Z (μT):"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/zGeomagneticFieldValueText"
+        app:layout_constraintStart_toStartOf="@+id/yGeomagneticFieldLabelText" />
+
+    <TextView
+        android:id="@+id/xGeomagneticFieldValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="116dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/xGeomagneticFieldLabelText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/yGeomagneticFieldValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="23dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/yGeomagneticFieldLabelText"
+        app:layout_constraintTop_toBottomOf="@+id/xGeomagneticFieldValueText" />
+
+    <TextView
+        android:id="@+id/zGeomagneticFieldValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="25dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/zGeomagneticFieldLabelText"
+        app:layout_constraintTop_toBottomOf="@+id/yGeomagneticFieldValueText" />
+</android.support.constraint.ConstraintLayout>

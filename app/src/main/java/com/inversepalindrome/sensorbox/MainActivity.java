@@ -61,5 +61,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(environmentIntent);
             }
         });
+
+        final Button magnetButton = findViewById(R.id.magnetButton);
+        magnetButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Intent magnetIntent = new Intent(MainActivity.this, MagnetActivity.class);
+                startActivity(magnetIntent);
+            }
+        });
+
+        final Button soundButton = findViewById(R.id.soundButton);
+        soundButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Intent soundIntent = new Intent(MainActivity.this, SoundActivity.class);
+                startActivity(soundIntent);
+            }
+        });
     }
 }
