@@ -9,7 +9,8 @@ package com.inversepalindrome.sensorbox;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.os.Bundle;
 import android.content.Intent;
 
@@ -22,63 +23,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button accelerometerButton = findViewById(R.id.accelerometerButton);
-        accelerometerButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view)
-            {
-                Intent accelerometerIntent = new Intent(MainActivity.this, AccelerometerActivity.class);
-                startActivity(accelerometerIntent);
-            }
-        });
+        final String[] labels = { "Accelerometer", "Compass", "Gyroscope", "Environment", "Magnet", "Sound"};
+        final int[] imageIDs = { R.drawable.accelerometer_icon, R.drawable.compass_icon, R.drawable.gyroscope_icon
+                , R.drawable.environment_icon, R.drawable.magnet_icon, R.drawable.volume_icon };
 
-        final Button compassButton = findViewById(R.id.compassButton);
-        compassButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view)
-            {
-                Intent compassIntent = new Intent(MainActivity.this, CompassActivity.class);
-                startActivity(compassIntent);
-            }
-        });
+        MenuGridAdapter menuGridAdapter = new MenuGridAdapter(MainActivity.this, labels, imageIDs);
 
-        final Button gyroscopeButton = findViewById(R.id.gyroscopeButton);
-        gyroscopeButton.setOnClickListener(new View.OnClickListener(){
+        GridView grid = findViewById(R.id.grid);
+        grid.setAdapter(menuGridAdapter);
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                Intent gyroscopeIntent = new Intent(MainActivity.this, GyroscopeActivity.class);
-                startActivity(gyroscopeIntent);
-            }
-        });
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String currentItem = labels[i];
 
-        final Button environmentButton = findViewById(R.id.environmentButton);
-        environmentButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view)
-            {
-                Intent environmentIntent = new Intent(MainActivity.this, EnvironmentActivity.class);
-                startActivity(environmentIntent);
-            }
-        });
-
-        final Button magnetButton = findViewById(R.id.magnetButton);
-        magnetButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view)
-            {
-                Intent magnetIntent = new Intent(MainActivity.this, MagnetActivity.class);
-                startActivity(magnetIntent);
-            }
-        });
-
-        final Button soundButton = findViewById(R.id.soundButton);
-        soundButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view)
-            {
-                Intent soundIntent = new Intent(MainActivity.this, SoundActivity.class);
-                startActivity(soundIntent);
+                switch(currentItem){
+                    case "Accelerometer":
+                        startActivity(new Intent(MainActivity.this, AccelerometerActivity.class));
+                        break;
+                    case "Compass":
+                        startActivity(new Intent(MainActivity.this, CompassActivity.class));
+                        break;
+                    case "Gyroscope":
+                        startActivity(new Intent(MainActivity.this, GyroscopeActivity.class));
+                        break;
+                    case "Environment":
+                        startActivity(new Intent(MainActivity.this, EnvironmentActivity.class));
+                        break;
+                    case "Magnet":
+                        startActivity(new Intent(MainActivity.this, MagnetActivity.class));
+                        break;
+                    case "Sound":
+                        startActivity(new Intent(MainActivity.this, SoundActivity.class));
+                        break;
+                }
             }
         });
     }

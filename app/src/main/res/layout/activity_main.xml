@@ -1,74 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.inversepalindrome.sensorbox.GyroscopeActivity">
+    tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/accelerometerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="102dp"
-        android:text="Accelerometer"
-        app:layout_constraintEnd_toEndOf="@+id/gyroscopeButton"
-        app:layout_constraintStart_toStartOf="@+id/gyroscopeButton"
-        app:layout_constraintTop_toTopOf="parent" />
+    <GridView
+        android:numColumns="auto_fit"
+        android:gravity="center"
+        android:columnWidth="150dp"
+        android:stretchMode="columnWidth"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/grid"
+        />
 
-    <Button
-        android:id="@+id/compassButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Compass"
-        app:layout_constraintBaseline_toBaselineOf="@+id/accelerometerButton"
-        app:layout_constraintEnd_toEndOf="@+id/environmentButton"
-        app:layout_constraintStart_toStartOf="@+id/environmentButton" />
-
-    <Button
-        android:id="@+id/gyroscopeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="71dp"
-        android:layout_marginLeft="71dp"
-        android:text="Gyroscope"
-        app:layout_constraintBaseline_toBaselineOf="@+id/environmentButton"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/environmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginBottom="219dp"
-        android:text="Environment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gyroscopeButton" />
-
-    <Button
-        android:id="@+id/magnetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="115dp"
-        android:text="Magnet"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/gyroscopeButton"
-        app:layout_constraintEnd_toStartOf="@+id/soundButton"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/soundButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:text="Sound"
-        app:layout_constraintBaseline_toBaselineOf="@+id/magnetButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/magnetButton" />
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

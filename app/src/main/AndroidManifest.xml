@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme.Launcher">
         <activity
             android:name=".MainActivity"
-            android:icon="@mipmap/ic_launcher">
+            android:icon="@mipmap/ic_launcher"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,15 +28,22 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".AccelerometerActivity"
-            android:label="Accelerometer" />
+            android:label="Accelerometer"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".EnvironmentActivity"
-            android:label="Environment" />
+            android:label="Environment"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".GyroscopeActivity"
-            android:label="Gyroscope" />
-        <activity android:name=".MagnetActivity" android:label="Magnet" />
-        <activity android:name=".SoundActivity" android:label="Sound"></activity>
+            android:label="Gyroscope"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MagnetActivity"
+            android:label="Magnet"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SoundActivity"
+            android:label="Sound"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

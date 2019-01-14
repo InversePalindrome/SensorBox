@@ -70,4 +70,5 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/zGeomagneticFieldLabelText"
         app:layout_constraintTop_toBottomOf="@+id/yGeomagneticFieldValueText" />
+
 </android.support.constraint.ConstraintLayout>

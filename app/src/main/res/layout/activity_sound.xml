@@ -28,4 +28,5 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/soundAmplitudeLabelText"
         app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
