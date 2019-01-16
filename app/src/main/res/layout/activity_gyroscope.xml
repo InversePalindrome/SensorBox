@@ -14,6 +14,9 @@
         android:layout_marginLeft="32dp"
         android:text="Angular Speed X (rad/s):"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/angularSpeedXValueText"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -23,6 +26,9 @@
         android:layout_height="20dp"
         android:text="Angular Speed Y (rad/s):"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/angularSpeedYValueText"
         app:layout_constraintStart_toStartOf="@+id/angularSpeedXLabelText" />
 
@@ -34,6 +40,9 @@
         android:layout_marginRight="1dp"
         android:text="Angular Speed Z (rad/s):"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/angularSpeedZValueText"
         app:layout_constraintEnd_toEndOf="@+id/angularSpeedYLabelText" />
 
@@ -46,6 +55,9 @@
         android:layout_marginTop="58dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintStart_toEndOf="@+id/angularSpeedXLabelText"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +68,9 @@
         android:layout_marginTop="14dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintStart_toStartOf="@+id/angularSpeedXValueText"
         app:layout_constraintTop_toBottomOf="@+id/angularSpeedXValueText" />
 
@@ -68,6 +83,9 @@
         android:layout_marginTop="17dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintStart_toEndOf="@+id/angularSpeedZLabelText"
         app:layout_constraintTop_toBottomOf="@+id/angularSpeedYValueText" />
 </android.support.constraint.ConstraintLayout>

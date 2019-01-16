@@ -14,6 +14,9 @@
         android:layout_marginLeft="63dp"
         android:text="Sound Amplitude (dB):"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/soundAmplitudeValueText"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -21,11 +24,14 @@
         android:id="@+id/soundAmplitudeValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="106dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="104dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintStart_toEndOf="@+id/soundAmplitudeLabelText"
         app:layout_constraintTop_toTopOf="parent" />
 

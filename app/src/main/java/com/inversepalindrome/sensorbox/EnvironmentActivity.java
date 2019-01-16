@@ -39,7 +39,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
         temperatureText = findViewById(R.id.temperatureValueText);
         humidityText = findViewById(R.id.ambientHumidityValueText);
         pressureText = findViewById(R.id.ambientPressureValueText);
-        lightText = findViewById(R.id.lightValueText);
+        lightText = findViewById(R.id.ambientLightValueText);
     }
 
     @Override

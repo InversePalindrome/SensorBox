@@ -14,6 +14,9 @@
         android:layout_marginLeft="69dp"
         android:text="Geomagnetic Field X (μT):"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/xGeomagneticFieldValueText"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -23,6 +26,9 @@
         android:layout_height="wrap_content"
         android:text="Geomagnetic Field Y (μT):"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/yGeomagneticFieldValueText"
         app:layout_constraintStart_toStartOf="@+id/xGeomagneticFieldLabelText" />
 
@@ -32,6 +38,9 @@
         android:layout_height="wrap_content"
         android:text="Geomagnetic Field Z (μT):"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/zGeomagneticFieldValueText"
         app:layout_constraintStart_toStartOf="@+id/yGeomagneticFieldLabelText" />
 
@@ -44,6 +53,9 @@
         android:layout_marginTop="116dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintStart_toEndOf="@+id/xGeomagneticFieldLabelText"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +68,9 @@
         android:layout_marginTop="23dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintStart_toEndOf="@+id/yGeomagneticFieldLabelText"
         app:layout_constraintTop_toBottomOf="@+id/xGeomagneticFieldValueText" />
 
@@ -68,6 +83,9 @@
         android:layout_marginTop="25dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
         app:layout_constraintStart_toEndOf="@+id/zGeomagneticFieldLabelText"
         app:layout_constraintTop_toBottomOf="@+id/yGeomagneticFieldValueText" />
 
