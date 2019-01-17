@@ -4,33 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CompassActivity">
+    tools:context=".CompassActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/degreeLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Orientation (°):"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
+        app:layout_constraintBaseline_toBaselineOf="@+id/degreeValueText"
+        app:layout_constraintEnd_toStartOf="@+id/degreeValueText"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/degreeValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="53dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/degreeLabelText"
+        app:layout_constraintTop_toBottomOf="@+id/compassImage" />
 
     <ImageView
         android:id="@+id/compassImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/compass_description"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/degreeValueText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/compass_image" />
-
-    <TextView
-        android:id="@+id/degreeText"
-        android:layout_width="18dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="24dp"
-        android:text="0"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/compassImage"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toEndOf="@+id/compassImage"
-        app:layout_constraintTop_toTopOf="@+id/compassImage"
-        tools:textSize="30sp" />
+        app:srcCompat="@drawable/compassimage" />
 
 </android.support.constraint.ConstraintLayout>

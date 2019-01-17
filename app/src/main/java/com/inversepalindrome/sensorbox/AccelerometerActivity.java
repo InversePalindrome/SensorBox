@@ -41,6 +41,7 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
     private TextView zAccelerationText;
 
     private final static float MAX_POINTS_DISPLAYED = 150;
+    private final static float CHART_RANGE = 10;
 
     private boolean plotData = true;
 
@@ -82,7 +83,7 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
         YAxis leftAxis = accelerometerChart.getAxisLeft();
         leftAxis.setTextColor(Color.WHITE);
         leftAxis.setDrawGridLines(false);
-        leftAxis.setAxisMaximum(10.f);
+        leftAxis.setAxisMaximum(CHART_RANGE);
         leftAxis.setAxisMinimum(0.f);
         leftAxis.setDrawGridLines(true);
 
@@ -194,9 +195,9 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
                 data.addDataSet(zData);
             }
 
-            data.addEntry(new Entry(xData.getEntryCount(), xAcceleration + 5), 0);
-            data.addEntry(new Entry(yData.getEntryCount(), yAcceleration + 5), 1);
-            data.addEntry(new Entry(zData.getEntryCount(), zAcceleration + 5), 2);
+            data.addEntry(new Entry(xData.getEntryCount(), xAcceleration + CHART_RANGE / 2.f), 0);
+            data.addEntry(new Entry(yData.getEntryCount(), yAcceleration + CHART_RANGE / 2.f), 1);
+            data.addEntry(new Entry(zData.getEntryCount(), zAcceleration + CHART_RANGE / 2.f), 2);
 
             data.notifyDataChanged();
 

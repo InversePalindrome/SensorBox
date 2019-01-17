@@ -31,6 +31,8 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
 
     private float currentDegree = 0.f;
 
+    private static final long ANIMATION_DURATION = 200;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
@@ -42,7 +44,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
         sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
 
         compassImage = findViewById(R.id.compassImage);
-        degreeText = findViewById(R.id.degreeText);
+        degreeText = findViewById(R.id.degreeValueText);
     }
 
     @Override
@@ -70,12 +72,12 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
     public void onSensorChanged(SensorEvent event){
         final float degree = Math.round(event.values[0]);
 
-        degreeText.setText(String.format(Locale.US, "%.1f", degree) + "°");
+        degreeText.setText(String.format(Locale.US, "%.1f", degree));
 
         RotateAnimation rotateAnimation = new RotateAnimation(currentDegree, -degree, Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f);
 
-        rotateAnimation.setDuration(210);
+        rotateAnimation.setDuration(ANIMATION_DURATION);
         rotateAnimation.setFillAfter(true);
 
         compassImage.startAnimation(rotateAnimation);
