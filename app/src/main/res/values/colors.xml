@@ -3,4 +3,7 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#0d0d0d</color>
     <color name="colorAccent">#000000</color>
+    <color name="innerThermometerColor">#DC143C</color>
+    <color name="middleThermometerColor">#87CEFA</color>
+    <color name="outerThermometerColor">#0000CD</color>
 </resources>

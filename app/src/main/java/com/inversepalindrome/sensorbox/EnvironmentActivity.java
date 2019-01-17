@@ -22,6 +22,8 @@ import java.util.Locale;
 public class EnvironmentActivity extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
 
+    private ThermometerView thermometer;
+
     private TextView temperatureText;
     private TextView humidityText;
     private TextView pressureText;
@@ -35,6 +37,8 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
         setContentView(R.layout.activity_environment);
 
         sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+
+        thermometer = findViewById(R.id.thermometer);
 
         temperatureText = findViewById(R.id.temperatureValueText);
         humidityText = findViewById(R.id.ambientHumidityValueText);
@@ -96,6 +100,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
            final float ambientTemperature = sensorEvent.values[0];
 
            temperatureText.setText(String.format(Locale.US, "%.1f", ambientTemperature));
+           thermometer.setCurrentTemp(ambientTemperature);
        }
        else if(sensorEvent.sensor.getType() == Sensor.TYPE_RELATIVE_HUMIDITY){
            final float ambientHumidity = sensorEvent.values[0];

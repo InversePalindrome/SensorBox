@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="ThermometerView">
+        <attr name="radius" format="dimension" />
+        <attr name="outerColor" format="color" />
+        <attr name="middleColor" format="color" />
+        <attr name="innerColor" format="color" />
+    </declare-styleable>
+</resources>
