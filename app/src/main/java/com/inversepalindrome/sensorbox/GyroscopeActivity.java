@@ -107,7 +107,7 @@ public class GyroscopeActivity extends AppCompatActivity implements SensorEventL
         Sensor gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
 
         if(gyroscopeSensor != null){
-            sensorManager.registerListener(this, gyroscopeSensor, SensorManager.SENSOR_DELAY_GAME);
+            sensorManager.registerListener(this, gyroscopeSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
         else{
             Toast.makeText(this, "No gyroscope sensor found!", Toast.LENGTH_LONG).show();

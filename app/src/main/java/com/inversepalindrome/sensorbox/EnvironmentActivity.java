@@ -27,6 +27,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
     private TextView temperatureText;
     private TextView humidityText;
     private TextView pressureText;
+    private TextView altitudeText;
     private TextView lightText;
 
     @Override
@@ -44,6 +45,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
         humidityText = findViewById(R.id.ambientHumidityValueText);
         pressureText = findViewById(R.id.ambientPressureValueText);
         lightText = findViewById(R.id.ambientLightValueText);
+        altitudeText = findViewById(R.id.altitudeValueText);
     }
 
     @Override
@@ -53,7 +55,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
         final Sensor temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
 
         if(temperatureSensor != null){
-            sensorManager.registerListener(this, temperatureSensor, SensorManager.SENSOR_DELAY_FASTEST);
+            sensorManager.registerListener(this, temperatureSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
         else{
             Toast.makeText(this, "No temperature sensor found!", Toast.LENGTH_LONG).show();
@@ -62,7 +64,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
         final Sensor humiditySensor = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY);
 
         if(humiditySensor != null){
-            sensorManager.registerListener(this, humiditySensor, SensorManager.SENSOR_DELAY_FASTEST);
+            sensorManager.registerListener(this, humiditySensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
         else{
             Toast.makeText(this, "No humidity sensor found!", Toast.LENGTH_LONG).show();
@@ -71,7 +73,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
         final Sensor pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
 
         if(pressureSensor != null){
-            sensorManager.registerListener(this, pressureSensor, SensorManager.SENSOR_DELAY_FASTEST);
+            sensorManager.registerListener(this, pressureSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
         else{
             Toast.makeText(this, "No pressure sensor found!", Toast.LENGTH_LONG).show();
@@ -80,7 +82,7 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
         final Sensor lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
         if(lightSensor != null){
-            sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_FASTEST);
+            sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
         else{
             Toast.makeText(this, "No light sensor found!", Toast.LENGTH_LONG).show();
@@ -109,8 +111,11 @@ public class EnvironmentActivity extends AppCompatActivity implements SensorEven
        }
        else if(sensorEvent.sensor.getType() == Sensor.TYPE_PRESSURE){
            final float ambientPressure = sensorEvent.values[0];
+           final float altitude = SensorManager.getAltitude(SensorManager.PRESSURE_STANDARD_ATMOSPHERE,
+                   ambientPressure);
 
            pressureText.setText(String.format(Locale.US, "%.1f", ambientPressure));
+           altitudeText.setText(String.format(Locale.US, "%.1f", altitude));
        }
        else if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT){
            final float ambientLight = sensorEvent.values[0];

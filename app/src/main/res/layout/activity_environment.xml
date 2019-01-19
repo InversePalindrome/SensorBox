@@ -11,58 +11,59 @@
         android:id="@+id/temperatureLabelText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="Ambient Temperature (C°):"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:typeface="sans"
         app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/temperatureValueText"
-        app:layout_constraintStart_toStartOf="@+id/ambientHumidityLabelText" />
+        app:layout_constraintEnd_toStartOf="@+id/temperatureValueText"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/temperatureValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="11dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:typeface="sans"
         app:fontFamily="sans-serif"
         app:layout_constraintBottom_toTopOf="@+id/ambientHumidityValueText"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/temperatureLabelText" />
 
     <TextView
         android:id="@+id/ambientLightLabelText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginBottom="43dp"
         android:text="Ambient Light (lx):"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:typeface="sans"
         app:fontFamily="sans-serif"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thermometer" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/ambientLightValueText"
+        app:layout_constraintStart_toStartOf="@+id/ambientPressureLabelText" />
 
     <TextView
         android:id="@+id/ambientLightValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="10dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:typeface="sans"
         app:fontFamily="sans-serif"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/altitudeValueText"
         app:layout_constraintStart_toEndOf="@+id/ambientLightLabelText" />
 
     <TextView
@@ -75,15 +76,15 @@
         android:typeface="sans"
         app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/ambientPressureValueText"
-        app:layout_constraintStart_toStartOf="@+id/ambientLightLabelText" />
+        app:layout_constraintStart_toStartOf="@+id/ambientHumidityLabelText" />
 
     <TextView
         android:id="@+id/ambientPressureValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginBottom="8dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
@@ -102,15 +103,15 @@
         android:typeface="sans"
         app:fontFamily="sans-serif"
         app:layout_constraintBaseline_toBaselineOf="@+id/ambientHumidityValueText"
-        app:layout_constraintStart_toStartOf="@+id/ambientPressureLabelText" />
+        app:layout_constraintStart_toStartOf="@+id/temperatureLabelText" />
 
     <TextView
         android:id="@+id/ambientHumidityValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="8dp"
         android:text="0"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
@@ -124,16 +125,43 @@
         android:layout_width="161dp"
         android:layout_height="0dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="156dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="26dp"
         app:innerColor="@color/innerThermometerColor"
-        app:layout_constraintBottom_toTopOf="@+id/ambientLightLabelText"
+        app:layout_constraintBottom_toTopOf="@+id/temperatureLabelText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:middleColor="@color/middleThermometerColor"
         app:outerColor="@color/outerThermometerColor"
         app:radius="60dp" />
+
+    <TextView
+        android:id="@+id/altitudeLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altitude (m):"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
+        app:layout_constraintBaseline_toBaselineOf="@+id/altitudeValueText"
+        app:layout_constraintStart_toStartOf="@+id/ambientLightLabelText" />
+
+    <TextView
+        android:id="@+id/altitudeValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="52dp"
+        android:text="0"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/altitudeLabelText" />
 
 
 </android.support.constraint.ConstraintLayout>

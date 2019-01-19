@@ -11,6 +11,7 @@ import com.cardiomood.android.controls.gauge.SpeedometerGauge;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
 import android.os.Build;
 import android.os.Handler;
@@ -19,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.media.MediaRecorder;
-import android.support.v4.app.ActivityCompat;
 import java.io.IOException;
 import java.util.Locale;
 import android.view.View;
@@ -77,13 +77,9 @@ public class SoundActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(isRecording){
-                    recordButton.setImageResource(R.drawable.play_icon);
-
                     stopRecording();
                 }
                 else{
-                    recordButton.setImageResource(R.drawable.stop_icon);
-
                     startRecording();
                 }
 
@@ -92,6 +88,13 @@ public class SoundActivity extends AppCompatActivity {
         });
 
         startUpdate();
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        stopRecording();
     }
 
     @Override
@@ -135,6 +138,8 @@ public class SoundActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+        recordButton.setImageResource(R.drawable.stop_icon);
     }
 
     private void stopRecording(){
@@ -143,6 +148,8 @@ public class SoundActivity extends AppCompatActivity {
             mediaRecorder.release();
             mediaRecorder = null;
         }
+
+        recordButton.setImageResource(R.drawable.play_icon);
     }
 
     private double getAmplitude(){
