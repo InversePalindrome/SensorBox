@@ -2,7 +2,7 @@
 
 
 ## Android
-- [Download](https://play.google.com/store/apps/details?id=com.inversepalindrome.studybits) in Google Play Store!
+- [Download](https://play.google.com/store/apps/details?id=com.inversepalindrome.sensorbox) in Google Play Store!
 - Available Sensors: Accelerometer, Orientation, Gyroscope, Environment, Sound, and Geomagnetic Field.
 
 ![mainactivity](https://user-images.githubusercontent.com/26044298/51346619-14d7fc00-1a6c-11e9-9391-4ffe7abbca8f.png)
